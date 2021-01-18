@@ -63,27 +63,27 @@ const router = new VueRouter({
 });
 
 // check for validating routes beforeEach redirect
-router.beforeEach((to, from, next) => {
-  if (to.name == 'Login' && isLoggedIn()) {
-    next({
-      path: '/',
-    });
-  } else if (to.name == 'Signup' && isLoggedIn()) {
-    next({
-      path: '/',
-    });
-  } else if (
-    to.name != 'Login' &&
-    to.name != 'Signup' &&
-    to.name != 'ForgetPassword' &&
-    !isLoggedIn()
-  ) {
-    next({
-      path: '/login',
-    });
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.name == 'Login' && isLoggedIn()) {
+//     next({
+//       path: '/',
+//     });
+//   } else if (to.name == 'Signup' && isLoggedIn()) {
+//     next({
+//       path: '/',
+//     });
+//   } else if (
+//     to.name != 'Login' &&
+//     to.name != 'Signup' &&
+//     to.name != 'ForgetPassword' &&
+//     !isLoggedIn()
+//   ) {
+//     next({
+//       path: '/login',
+//     });
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
